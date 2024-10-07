@@ -16,6 +16,8 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "noUnusedLocals": false, // Permite variáveis locais não utilizadas
+    "noUnusedParameters": false // Permite parâmetros não utilizados
   }
 }
