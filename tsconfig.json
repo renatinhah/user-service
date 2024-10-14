@@ -17,7 +17,8 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "noUnusedLocals": false, // Permite variáveis locais não utilizadas
-    "noUnusedParameters": false // Permite parâmetros não utilizados
-  }
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "exclude": ["node_modules", "dist"]
 }
