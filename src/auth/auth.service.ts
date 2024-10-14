@@ -12,11 +12,9 @@ export class AuthService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     console.log(`Validating user: ${username}`);
-    const user = await this.usersService.findOne(username);
-    console.log('Found user:', user); // Logar o objeto do usuário
+    const user = await this.usersService.findByName(username);
 
     if (user) {
-      console.log('Comparing password');
       const passwordMatch = await bcrypt.compare(pass, user.password);
       console.log('Password match:', passwordMatch);
 
@@ -25,11 +23,12 @@ export class AuthService {
         return result;
       }
     }
+    console.log('Password dont match!');
     return null;
   }
 
   async login(user: any) {
-    const payload = { username: user.username, sub: user.userId };
+    const payload = { username: user.username, sub: user.id };
     return {
       access_token: this.jwtService.sign(payload),
     };

@@ -9,9 +9,9 @@ import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(), // Carrega o arquivo .env
+    ConfigModule.forRoot(), //carrega o arquivo .env
     UsersModule,
-    PassportModule, // Permite usar a estratégia Passport para autenticação
+    PassportModule, //permite usar a estratégia Passport para autenticação
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],

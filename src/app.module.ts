@@ -6,7 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { User } from './users/user.entity';
 import { UserSeeder } from './seeds/user.seeder';
-import { SeedController } from './seeds/seed.controller'; 
+import { SeedController } from './seeds/seed.controller';
 
 @Module({
   imports: [
