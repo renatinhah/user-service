@@ -40,10 +40,7 @@ export class UserSeeder {
     });
 
     await userRepository.save(user);
-    console.log('Seeding user:', user);
     await userRepository.save(user1);
-    console.log('Seeding user:', user1);
     await userRepository.save(user2);
-    console.log('Seeding user:', user2);
   }
 }

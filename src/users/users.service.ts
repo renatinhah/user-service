@@ -10,11 +10,12 @@ import { UserDto } from './dto/user.dto';
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private usersRepository: Repository<User>
+    private usersRepository: Repository<User>,
   ) {}
 
-  async create(user: User): Promise<User> {
-    return this.usersRepository.save(user);
+  async create(user: User): Promise<UserDto> {
+    const userCreated = await this.usersRepository.save(user);
+    return UserDto.fromEntity(userCreated);
   }
 
   async findByName(username: string): Promise<User | null> {
